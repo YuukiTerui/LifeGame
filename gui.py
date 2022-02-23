@@ -1,7 +1,7 @@
 import tkinter as tk
 
 from world import World
-from simulation import Simulation
+from simulatior import Simulatior
 
 
 class Gui(tk.Tk):
