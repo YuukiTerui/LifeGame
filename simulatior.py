@@ -11,4 +11,4 @@ class Simulatior:
     def simulate(self):
         for g in range(1, self.generation_limit):
             self.world.update()
-            print(self.world.now)
+            yield self.world()

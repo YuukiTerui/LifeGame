@@ -15,7 +15,7 @@ class Gui(tk.Tk):
 
         self.cells = []
         self.cell_color = ['black', 'green']
-        self.worldsize = tk.IntVar(value=5)
+        self.worldsize = tk.IntVar(value=10)
         self.world = World(self.worldsize.get())
 
 
@@ -24,8 +24,8 @@ class Gui(tk.Tk):
     def create_widgets(self):
         self.cellwidth = 50
         self.canvas = tk.Canvas(self, width=500, height=500)
-        for i in range(5):
-            for j in range(5):
+        for i in range(self.world.size):
+            for j in range(self.world.size):
                 rect = self.canvas.create_rectangle((self.cellwidth*i, self.cellwidth*j, self.cellwidth*(i+1), self.cellwidth*(j+1)),
                                                 fill=self.cell_color[0],
                                                 tags=[f'{i}-{j}'])
@@ -47,7 +47,10 @@ class Gui(tk.Tk):
             self.canvas.itemconfig(c, fill=self.cell_color[cn])
 
     def start_btn_clicked(self):
-        pass
+        # sim = Simulatior(self.world, 10)
+        # sim.simulate()
+        self.world.update()
+        self.canvas_update()
 
     def clear_btn_clicked(self):
         self.world.clear()
