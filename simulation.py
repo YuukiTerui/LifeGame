@@ -2,8 +2,8 @@ from world import World
 
 
 class Simulation:
-    def __init__(self, limit, worldsize=5) -> None:
-        self.world = World(worldsize)
+    def __init__(self, world, limit) -> None:
+        self.world = world
         self.world.create_random()
         self.generation = 0
         self.generation_limit = limit
