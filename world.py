@@ -14,7 +14,7 @@ class World:
             return self.now
 
     def create_random(self):
-        self.now = [[np.random.randint(0, 2) for _ in range(self.size)] for _ in range(self.n)]
+        self.now = [[np.random.randint(0, 2) for _ in range(self.size)] for _ in range(self.size)]
 
     def inversion(self, i, j):
         self.now[i][j] = 0 if self.now[i][j] == 1 else 1
