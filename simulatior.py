@@ -1,7 +1,7 @@
 from world import World
 
 
-class Simulation:
+class Simulatior:
     def __init__(self, world, limit) -> None:
         self.world = world
         self.world.create_random()
